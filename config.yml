@@ -29,7 +29,10 @@ steps:
   description: Understand how map works on arrays
   event: pull_request.synchronize
   actions: # a list of the actions that will occur when the step is triggered by an event
-  - type: # the type of action, full list at https://lab.github.com/docs/actions
+  - type: gate # the type of action, full list at https://lab.github.com/docs/actions
+    left: '%payload.pull_request.title%'
+    operator: ===
+    right: Greet world
 
 # Step 2: EDIT HERE -INTERNAL COMMENT FOR STEP 2
 - title: The `reduce` method
