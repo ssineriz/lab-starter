@@ -1,6 +1,6 @@
-title: # a name for your Learning Lab course
-tagline: # a short description for your Learning Lab course, displayed on the course catalog
-description: # a longer description for your Learning Lab course, displayed on the course's landing page
+title: Javascript functional programming
+tagline: An adventure into functional javascript and functional methods
+description: A longer description for your Learning Lab course, displayed on the course's landing page
 
 # Repository setup
 # The following section template information for the repository
@@ -14,7 +14,8 @@ template:
 # Actions to take place after the learner registers, but before they start interacting with their repo
 
 before:
-- type: # the type of action, full list at https://lab.github.com/docs/actions/
+- type: respond
+  with: 01_first-response.md
   # some actions require additional options, those should appear below `type:`
   # you can execute multiple actions in the `before` block
 
@@ -26,35 +27,43 @@ steps:
 # Step 1: EDIT HERE - INTERNAL COMMENT DESCRIBING STEP 
 - title: The `map` method
   description: Understand how map works on arrays
-  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  event: pull_request.synchronize
   actions: # a list of the actions that will occur when the step is triggered by an event
-  - type: # the type of action, full list at https://lab.github.com/docs/actions
+  - type: gate
+    left: '%payload.pull_request.title%'
+    operator: ===
+    right: "Greet world"
+    else:
+    - type: respond
+      with: 01_try-again.md
+  - type: respond
+    with: 01_nice-work.md
 
 # Step 2: EDIT HERE -INTERNAL COMMENT FOR STEP 2
 - title: The `reduce` method
   description: How does reduce work on collections
-#  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  event: pull_request.synchronize
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
 # Step 3: EDIT HERE - INTERNAL COMMENT FOR STEP 3
 - title: The `sort` method
   description: How to sort on collections
-#  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  event: commit_comment
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
 # Step 4: EDIT HERE - INTERNAL COMMENT FOR STEP 4
 - title: The `find` and `findIndex` method
   description: Search for elements in an array
-#  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  event: commit_comment
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
 # Step 5: EDIT HERE - INTERNAL COMMENT FOR STEP 5
 - title: The `some` and `every` methods
   description: How to test for certain conditions in an array
-#  event: # the event that will trigger the actions to be executed, full list at https://developer.github.com/v3/activity/events/types/
+  event: commit_comment
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
