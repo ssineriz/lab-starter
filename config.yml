@@ -42,28 +42,28 @@ steps:
 # Step 2: EDIT HERE -INTERNAL COMMENT FOR STEP 2
 - title: The `reduce` method
   description: How does reduce work on collections
-  event: pull_request.synchronize
+#  event: pull_request.synchronize
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
 # Step 3: EDIT HERE - INTERNAL COMMENT FOR STEP 3
 - title: The `sort` method
   description: How to sort on collections
-  event: commit_comment
+#  event: commit_comment
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
 # Step 4: EDIT HERE - INTERNAL COMMENT FOR STEP 4
 - title: The `find` and `findIndex` method
   description: Search for elements in an array
-  event: commit_comment
+#  event: commit_comment
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
 # Step 5: EDIT HERE - INTERNAL COMMENT FOR STEP 5
 - title: The `some` and `every` methods
   description: How to test for certain conditions in an array
-  event: commit_comment
+#  event: commit_comment
 #  actions: # a list of the actions that will occur when the step is triggered by an event
 #  - type: # the type of action, full list at https://lab.github.com/docs/actions
 
